@@ -14,4 +14,8 @@ describe('wordCount', function(){
   it("should take a few words input and return them with a count", function(){
     expect(wordCount("Hello stranger stranger there")).to.eql(['stranger: 2', 'Hello: 1', 'there: 1']);
   });
+
+  it("should take a few words input and return them with a count", function(){
+    expect(wordCount("Hello stranger stranger there Hello stranger")).to.eql(['stranger: 3', 'Hello: 2', 'there: 1']);
+  });
 });

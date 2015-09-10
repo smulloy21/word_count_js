@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" href="https://bootswatch.com/slate/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto+Mono' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="js/scripts.js"></script>
@@ -12,17 +13,20 @@
     <div class="container well">
 
       <h1>Word count</h1>
-      <form id="romanize">
+      <form id="wordCount">
         <div class="form-group">
-          <input id="number" type="text" placeholder="enter an arabic number">
+          <textarea id="text" placeholder="type some text"></textarea>
         </div>
-          <button type="submit" class="btn btn-danger">count it</button>
+          <button type="submit" class="btn btn-warning">count it</button>
       </form>
       <div class='well' id="result">
-        <h3 class="response">Your arabic number of <strong><span class="number text-warning"></span></strong> is <strong><span class="result text-success"></span></strong> in Roman numerals!</h3>
+        <h3 class="response">Your text has:</h3>
+        <ul id="word" class="fa fa-ul">
+
+        </ul>
       </div>
       <div  class="well" id="error">
-        <h3></h3>
+        <h3>just in case..</h3>
       </div>
     </div>
   </body>

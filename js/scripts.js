@@ -1,4 +1,5 @@
 var wordCount = function(text){
+  text = text.replace(/[^\w\s]|/g, "");
   var words = text.split(" ");
   var obj = {};
   for (var i = 0; i < words.length; i++) {
@@ -14,3 +15,17 @@ var wordCount = function(text){
   }
   return keysSorted;
 };
+
+$(document).ready(function() {
+  $("form#wordCount").submit(function(event){
+    $('ul#word').empty();
+    var text = $("textarea#text").val();
+    var result = wordCount(text);
+    for (var i=0; i < result.length; i++){
+      $("ul#word").append("<li><i class='fa-li fa fa-info-circle'></i>" + result[i] +"</li>")
+    }
+    $("#result").show();
+
+    event.preventDefault();
+  });
+});
